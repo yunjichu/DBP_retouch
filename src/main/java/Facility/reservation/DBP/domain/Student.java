@@ -1,24 +1,36 @@
 package Facility.reservation.DBP.domain;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "STUDENT")
 public class Student {
-    private Long  student_id;
-    private String name;
-    private String gender;
-    private String contact_number;
-    private Integer department_id;
 
-    public Long getStudent_id() {
-        return student_id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "STUDENT_ID")
+    private Long studentId;
+
+    @Column(name = "NAME", nullable = false)
+    private String name;
+
+    @Column(name = "GENDER")
+    private String gender;
+
+    @Column(name = "CONTACT_NUMBER")
+    private String contactNumber;
+
+    @Column(name = "DEPARTMENT_ID")
+    private Long departmentId;
+
+    // Getters and Setters
+    public Long getStudentId() {
+        return studentId;
     }
 
-    public void setStudent_id(Long student_id) {
-        this.student_id = student_id;
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
     }
 
     public String getName() {
@@ -37,19 +49,19 @@ public class Student {
         this.gender = gender;
     }
 
-    public String getContact_number() {
-        return contact_number;
+    public String getContactNumber() {
+        return contactNumber;
     }
 
-    public void setContact_number(String contact_number) {
-        this.contact_number = contact_number;
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
     }
 
-    public Integer getDepartment_id() {
-        return department_id;
+    public Long getDepartmentId() {
+        return departmentId;
     }
 
-    public void setDepartment_id(Integer department_id) {
-        this.department_id = department_id;
+    public void setDepartmentId(Long departmentId) {
+        this.departmentId = departmentId;
     }
 }

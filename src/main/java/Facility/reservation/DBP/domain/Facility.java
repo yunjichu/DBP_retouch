@@ -1,21 +1,42 @@
 package Facility.reservation.DBP.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 
 @Entity
 @Table(name = "FACILITY")
 public class Facility {
-    private Long facilityId;
-    private String facilityName;
-    private Integer capacity;
-    private String location;
-    private String usageGuidelines;
-    private Integer availableStartTime;
-    private Integer availableEndTime;
-    private Integer reservationCount;
-    private boolean available;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "FACILITY_ID")
+    private Long facilityId;
+
+    @Column(name = "FACILITY_NAME", nullable = false)
+    private String facilityName;
+
+    @Column(name = "CAPACITY")
+    private Integer capacity;
+
+    @Column(name = "LOCATION")
+    private String location;
+
+    @Column(name = "USAGE_GUIDELINES")
+    private String usageGuidelines;
+
+    @Column(name = "AVAILABLE_START_TIME")
+    private Integer availableStartTime;
+
+    @Column(name = "AVAILABLE_END_TIME")
+    private Integer availableEndTime;
+
+    @Column(name = "DEPARTMENT_ID")
+    private Long departmentId;
+
+    @Column(name = "TOTAL_RESERVATIONS")
+    private Integer totalReservations;
+
+    // Getters and Setters
     public Long getFacilityId() {
         return facilityId;
     }
@@ -72,19 +93,19 @@ public class Facility {
         this.availableEndTime = availableEndTime;
     }
 
-    public Integer getReservationCount() {
-        return reservationCount;
+    public Long getDepartmentId() {
+        return departmentId;
     }
 
-    public void setReservationCount(Integer reservationCount) {
-        this.reservationCount = reservationCount;
+    public void setDepartmentId(Long departmentId) {
+        this.departmentId = departmentId;
     }
 
-    public boolean isAvailable() {
-        return available;
+    public Integer getTotalReservations() {
+        return totalReservations;
     }
 
-    public void setAvailable(boolean available) {
-        this.available = available;
+    public void setTotalReservations(Integer totalReservations) {
+        this.totalReservations = totalReservations;
     }
 }

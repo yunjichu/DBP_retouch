@@ -1,11 +1,8 @@
 package Facility.reservation.DBP;
 
-import Facility.reservation.DBP.reporsitory.JPAReservationRepository;
-import Facility.reservation.DBP.reporsitory.JdbcReservationRepository;
-import Facility.reservation.DBP.reporsitory.JdbcTemplatesReservationRepository;
+import Facility.reservation.DBP.reporsitory.JdbcReservationRepository1;
 import Facility.reservation.DBP.reporsitory.ReservationRepository;
 import Facility.reservation.DBP.service.ReservationService;
-import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -34,7 +31,7 @@ public class SpringConfig {
 
     @Bean
     public ReservationRepository reservationRepository(){
-        return new JdbcReservationRepository(dataSource);
+        return new JdbcReservationRepository1(dataSource);
         //return new JdbcTemplatesReservationRepository(dataSource);
         //return new JPAReservationRepository(em);
     }

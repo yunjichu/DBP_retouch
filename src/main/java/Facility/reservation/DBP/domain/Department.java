@@ -1,16 +1,26 @@
 package Facility.reservation.DBP.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "DEPARTMENT")
 public class Department {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "DEPARTMENT_ID")
     private Long departmentId;
+
+    @Column(name = "DEPARTMENT_NAME", nullable = false)
     private String departmentName;
+
+    @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
+
+    @Column(name = "OFFICE")
     private String office;
 
+    // Getters and Setters
     public Long getDepartmentId() {
         return departmentId;
     }

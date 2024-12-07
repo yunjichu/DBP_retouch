@@ -1,27 +1,46 @@
 package Facility.reservation.DBP.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "RESERVATION")
 public class Reservation {
-    private String reservationId; // 예약 ID (Primary Key)
-    private Long studentId; // 학생 ID
-    private Facility facility; // 시설과의 Many-to-One 관계
-    private LocalDate reservationDate; // 예약 날짜
-    private Integer startTime; // 시작 시간
-    private Integer endTime; // 종료 시간
-    private String formattedDate; // 포맷된 날짜 (DB에 저장하지 않음)
 
-    public String getReservationId() {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "RESERVATION_ID")
+    private Long reservationId;
+
+    @Column(name = "FACILITY_ID", nullable = false)
+    private Long facilityId;
+
+    @Column(name = "STUDENT_ID", nullable = false)
+    private Long studentId;
+
+    @Column(name = "RESERVATION_DATE", nullable = false)
+    private LocalTime reservationDate;
+
+    @Column(name = "RESERVATION_TIME", nullable = false)
+    private LocalTime reservationTime;
+
+    // Getters and Setters
+    public Long getReservationId() {
         return reservationId;
     }
 
-    public void setReservationId(String reservationId) {
+    public void setReservationId(Long reservationId) {
         this.reservationId = reservationId;
+    }
+
+    public Long getFacilityId() {
+        return facilityId;
+    }
+
+    public void setFacilityId(Long facilityId) {
+        this.facilityId = facilityId;
     }
 
     public Long getStudentId() {
@@ -32,14 +51,6 @@ public class Reservation {
         this.studentId = studentId;
     }
 
-    public Facility getFacility() {
-        return facility;
-    }
-
-    public void setFacility(Facility facility) {
-        this.facility = facility;
-    }
-
     public LocalDate getReservationDate() {
         return reservationDate;
     }
@@ -48,27 +59,11 @@ public class Reservation {
         this.reservationDate = reservationDate;
     }
 
-    public Integer getStartTime() {
-        return startTime;
+    public LocalTime getReservationTime() {
+        return reservationTime;
     }
 
-    public void setStartTime(Integer startTime) {
-        this.startTime = startTime;
-    }
-
-    public Integer getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Integer endTime) {
-        this.endTime = endTime;
-    }
-
-    public String getFormattedDate() {
-        return formattedDate;
-    }
-
-    public void setFormattedDate(String formattedDate) {
-        this.formattedDate = formattedDate;
+    public void setReservationTime(LocalTime reservationTime) {
+        this.reservationTime = reservationTime;
     }
 }
