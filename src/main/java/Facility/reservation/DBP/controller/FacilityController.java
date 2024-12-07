@@ -1,6 +1,6 @@
 package Facility.reservation.DBP.controller;
 
-import Facility.reservation.DBP.entity.Facility;
+import Facility.reservation.DBP.domain.Facility;
 import Facility.reservation.DBP.service.FacilityService;
 import Facility.reservation.DBP.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,11 @@
 package Facility.reservation.DBP.domain;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "STUDENT")
 public class Student {
     private Long  student_id;
     private String name;

@@ -1,7 +1,7 @@
 
 package Facility.reservation.DBP.service;
 
-import Facility.reservation.DBP.entity.Report;
+import Facility.reservation.DBP.domain.Report;
 import Facility.reservation.DBP.reporsitory.ReportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

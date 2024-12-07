@@ -1,7 +1,7 @@
 package Facility.reservation.DBP.controller;
 
-import Facility.reservation.DBP.entity.Report;
-import Facility.reservation.DBP.entity.Reservation;
+import Facility.reservation.DBP.domain.Report;
+import Facility.reservation.DBP.domain.Reservation;
 import Facility.reservation.DBP.service.*;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;

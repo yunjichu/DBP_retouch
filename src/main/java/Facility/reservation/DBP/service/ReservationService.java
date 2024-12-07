@@ -1,7 +1,7 @@
 package Facility.reservation.DBP.service;
 
-import Facility.reservation.DBP.entity.Reservation;
-import Facility.reservation.DBP.entity.Facility;
+import Facility.reservation.DBP.domain.Reservation;
+import Facility.reservation.DBP.domain.Facility;
 import Facility.reservation.DBP.reporsitory.FacilityRepository;
 import Facility.reservation.DBP.reporsitory.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,7 +64,7 @@ public class ReservationService {
 
     // 예약 ID로 예약 조회
     public Reservation getReservationById(String reservationId) {
-        return reservationRepository.findById(reservationId)
+        return reservationRepository.findByFacilityId(reservationId)
                 .orElseThrow(() -> new IllegalArgumentException("해당 예약을 찾을 수 없습니다: " + reservationId));
     }
 

@@ -1,5 +1,10 @@
 package Facility.reservation.DBP.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "REPORT")
 public class Report {
     private Long reportId;
     private String reservationId;

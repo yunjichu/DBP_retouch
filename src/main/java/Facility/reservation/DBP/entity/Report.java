@@ -37,6 +37,6 @@ public class Report {
     // reservation 객체로부터 reservationId를 설정하는 메서드
     public void setReservationIdFromReservation(Reservation reservation) {
         this.reservation = reservation;
-        this.reservationId = reservation.getReservationId();  // reservationId는 String으로 설정
+        this.reservationId = reservation.getreservationId();  // reservationId는 String으로 설정
     }
 }

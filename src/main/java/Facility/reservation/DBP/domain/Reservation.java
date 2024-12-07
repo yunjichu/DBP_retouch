@@ -1,7 +1,12 @@
 package Facility.reservation.DBP.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "RESERVATION")
 public class Reservation {
     private String reservationId; // 예약 ID (Primary Key)
     private Long studentId; // 학생 ID
