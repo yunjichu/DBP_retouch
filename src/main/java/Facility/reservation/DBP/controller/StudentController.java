@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/students")
 public class StudentController {
@@ -18,7 +20,7 @@ public class StudentController {
     }
 
     @GetMapping("/{studentId}")
-    public Student getStudentById(@PathVariable Long studentId) {
+    public Optional<Student> getStudentById(@PathVariable Long studentId) {
         return studentService.getStudentById(studentId);
     }
 }

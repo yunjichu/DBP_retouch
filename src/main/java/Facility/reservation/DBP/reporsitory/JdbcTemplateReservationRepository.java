@@ -8,22 +8,19 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @Repository
-public class JdbcTemplatesReservationRepository implements ReservationRepository{
+public class JdbcTemplateReservationRepository implements ReservationRepository{
 
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public JdbcTemplatesReservationRepository(DataSource dataSource) {
+    public JdbcTemplateReservationRepository(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
